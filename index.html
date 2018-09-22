@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Subtitle Rename</title>
+    <style>
+        #drag-file {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .subtitle-picker {
+            display: block;
+        }
+
+        h4, select {
+            display: inline-block;
+        }
+
+        select {
+            margin-left: 95px;
+            border-radius: 5px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="subtitle-picker">
+    <h4>Subtitle Language:</h4>
+    <select id="subtitle-dropdown">
+        <option value="-heb">Hebrew</option>
+        <option value="-eng">English</option>
+    </select>
+</div>
+
+<div id="drag-file">
+    <p>Drag your files here</p>
+</div>
+
+<script>
+    require('./renderer.js')
+</script>
+</body>
+</html>
