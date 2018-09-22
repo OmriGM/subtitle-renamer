@@ -4,10 +4,10 @@
 const fs = require('fs');
 
 
-
 (function () {
+
     const holder = document.getElementById('drag-file');
-    const dropDown= document.getElementById('subtitle-dropdown');
+    const dropDown = document.getElementById('subtitle-dropdown');
     const selectedOption = dropDown.options[dropDown.selectedIndex].value;
 
     holder.ondragover = () => {
@@ -22,12 +22,13 @@ const fs = require('fs');
         return false;
     };
 
-    holder.ondrop = (e) => {
-        e.preventDefault();
+    holder.ondrop = (files) => {
+        files.preventDefault();
         console.log(selectedOption);
-        for (let f of e.dataTransfer.files) {
-            const changed = f.path.replace(selectedOption, '');
-            fs.rename(f.path, changed, (err) => {
+        for (let file of files.dataTransfer.files) {
+            const changed = file.path.replace(selectedOption, '');
+            fs.rename(file.path, changed,()=>{
+
             });
         }
         return false;
