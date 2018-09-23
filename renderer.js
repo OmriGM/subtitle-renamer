@@ -8,7 +8,6 @@ const fs = require('fs');
 
     const holder = document.getElementById('drag-file');
     const dropDown = document.getElementById('subtitle-dropdown');
-    const selectedOption = dropDown.options[dropDown.selectedIndex].value;
 
     holder.ondragover = () => {
         return false;
@@ -24,6 +23,7 @@ const fs = require('fs');
 
     holder.ondrop = (files) => {
         files.preventDefault();
+        const selectedOption = dropDown.options[dropDown.selectedIndex].value;
         console.log(selectedOption);
         for (let file of files.dataTransfer.files) {
             const changed = file.path.replace(selectedOption, '');
